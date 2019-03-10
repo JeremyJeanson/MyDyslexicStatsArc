@@ -1,0 +1,73 @@
+<svg id="container">
+  <rect id="background" /> 
+  <svg class="battery-bar-container">
+    <gradientRect id="battery-bar-background"
+      gradient-type="linear"
+      gradient-x1="0" gradient-y1="100%-10"
+      gradient-x2="0" gradient-y1="100%-5"
+      gradient-color1="darkred" gradient-color2="black" />
+    <gradientRect id="battery-bar-value"
+      gradient-type="linear"
+      gradient-x1="0" gradient-y1="100%"
+      gradient-x2="0" gradient-y1="100%-6"
+      gradient-color1="yellowgreen" gradient-color2="darkgreen"/>
+  </svg>
+  <svg id="clock-container">
+    <image/>
+    <image/>
+    <image class="clock-doublepoints"/>
+    <image/>
+    <image/>
+  </svg>
+  <svg id="date-container">
+    <image/>
+    <image/>
+    <image/>
+    <image/>
+    <image/>
+    <image/>
+    <image/>
+    <image/>
+    <image/>
+    <image/>
+  </svg>
+  <svg id="battery-container">
+    <image class="battery-image" />
+    <image x="28"/>
+    <image />
+    <image />
+    <image />
+  </svg>
+  <svg class="stats-container">
+    <svg class="stats-steps-container">
+      <arc class="arc-background"/>
+      <circle />
+      <arc/>
+      <image />
+    </svg>
+    <svg class="stats-floors-container">
+      <arc class="arc-background"/>
+      <circle />
+      <arc/>
+      <image/>
+    </svg>
+    <svg class="stats-cals-container">
+      <arc class="arc-background"/>
+      <circle />
+      <arc/>
+      <image/>
+    </svg>
+    <svg class="stats-am-container">
+      <arc class="arc-background"/>
+      <circle />
+      <arc/>
+      <image/>
+    </svg>
+    <svg class="stats-dist-container">
+      <arc class="arc-background"/>
+      <circle/>
+      <arc/>
+      <image/>
+    </svg>
+  </svg>
+</svg>
