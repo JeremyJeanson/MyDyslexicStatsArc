@@ -1,19 +1,34 @@
-import clock  from "clock" 
-import { preferences, locale  } from "user-settings";
+import clock from "clock"
+import { preferences, locale } from "user-settings";
 
 // Localisation
-import {months as monthsEn} from "../locales/en";
-import {months as monthsFr} from "../locales/fr";
+// Localisation
+import { gettext } from "i18n";
+const _months = [
+    gettext("month01"),
+    gettext("month02"),
+    gettext("month03"),
+    gettext("month04"),
+    gettext("month05"),
+    gettext("month06"),
+    gettext("month07"),
+    gettext("month08"),
+    gettext("month09"),
+    gettext("month10"),
+    gettext("month11"),
+    gettext("month12")
+];
+
 import * as util from "./utils";
 type Granularity = 'off' | 'seconds' | 'minutes' | 'hours';
 
 // Last values
-let hoursLast:string;
-let minsLast:string;
-let dateLast:string;
+let _hoursLast: string;
+let _minsLast: string;
+let _dateLast: string;
 
 // Initialize the call back
-export function initialize(granularity:Granularity, callback: (hours:string, mins:string, date:string)=>void) : void {
+export function initialize(granularity: Granularity, callback: (hours: string, mins: string, date: string) => void): void {
     // Tick every minutes
     clock.granularity = granularity;
 
@@ -26,38 +41,37 @@ export function initialize(granularity:Granularity, callback: (hours:string, min
         let hoursOut = preferences.clockDisplay === "12h"
             ? (hoursNumber % 12 || 12).toString()
             : util.zeroPad(hoursNumber);
-        if(hoursOut.length===1) hoursOut = " " + hoursOut;
+        if (hoursOut.length === 1) hoursOut = " " + hoursOut;
 
         // Format the minutes
         let minOut = util.zeroPad(today.getMinutes());
 
         // Foramat the date
         let day = today.getDate();
-        let languageFr = locale.language === "fr-fr" ;
-        let month = languageFr
-          ? monthsFr[today.getMonth()]
-          : monthsEn[today.getMonth()];
-        let dateOut = languageFr 
-            ?`${day} ${month}`
-            :`${month} ${day}`;
+        let languageFr = locale.language === "fr-fr";
+        let month = _months[today.getMonth()];
+
+        let dateOut = languageFr
+            ? `${day} ${month}`
+            : `${month} ${day}`;
 
         // Save or updage states
-        if(hoursLast != hoursOut) {
-            hoursLast = hoursOut;
+        if (_hoursLast != hoursOut) {
+            _hoursLast = hoursOut;
         }
         else {
             hoursOut = null;
         }
 
-        if(minsLast != minOut) {
-            minsLast = minOut;
+        if (_minsLast != minOut) {
+            _minsLast = minOut;
         }
         else {
             minOut = null;
         }
 
-        if(dateLast != dateOut) {
-            dateLast = dateOut;
+        if (_dateLast != dateOut) {
+            _dateLast = dateOut;
         }
         else {
             dateOut = null;

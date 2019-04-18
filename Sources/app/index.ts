@@ -20,8 +20,10 @@ const dates = dateContainer.getElementsByTagName("image") as ImageElement[];
 const cloks = document.getElementById("clock-container").getElementsByTagName("image") as ImageElement[];
 
 // Battery
-const batteryValue = document.getElementById("battery-bar-value") as GradientRectElement;
-const batteries = document.getElementById("battery-container").getElementsByTagName("image") as ImageElement[];
+const _batteryBarContainer = document.getElementById("battery-bar-container") as GraphicsElement;
+const _batteryBar = document.getElementById("battery-bar-value") as GradientRectElement;
+const _batteriesContainer = document.getElementById("battery-container") as GraphicsElement;
+const _batteries = _batteriesContainer.getElementsByTagName("image") as ImageElement[];
 
 // Stats
 const stats = document.getElementsByClassName("stats-container")[0].getElementsByTagName("svg") as GraphicsElement[];
@@ -34,29 +36,29 @@ simpleMinutes.initialize("seconds", (hours, mins, date) => {
   // mins="38";
   // date = "17 jan";
   // Hours
-  if(hours) {
-    cloks[0].href = util.getImageFromLeft(hours,0);
-    cloks[1].href = util.getImageFromLeft(hours,1);
+  if (hours) {
+    cloks[0].href = util.getImageFromLeft(hours, 0);
+    cloks[1].href = util.getImageFromLeft(hours, 1);
   }
 
   // Minutes
-  if(mins) {    
-    cloks[3].href = util.getImageFromLeft(mins,0);
-    cloks[4].href = util.getImageFromLeft(mins,1);  
+  if (mins) {
+    cloks[3].href = util.getImageFromLeft(mins, 0);
+    cloks[4].href = util.getImageFromLeft(mins, 1);
   }
 
   // Date
-  if(date) {
+  if (date) {
     // Position
     dateContainer.x = (device.screen.width) - (date.length * 20);
     // Values
-    for(let i=0; i<dates.length; i++){
+    for (let i = 0; i < dates.length; i++) {
       dates[i].href = util.getImageFromLeft(date, i);
     }
   }
 
-    // update od stats
-    UpdateActivities();
+  // update all stats
+  UpdateActivities();
 });
 
 // --------------------------------------------------------------------------------
@@ -65,15 +67,15 @@ simpleMinutes.initialize("seconds", (hours, mins, date) => {
 import * as batterySimple from "./simple/power-battery";
 
 // Method to update battery level informations
-batterySimple.initialize((battery)=>{
+batterySimple.initialize((battery) => {
   let batteryString = battery.toString() + "%";
   // Battery bar
-  batteryValue.width = Math.floor(battery) * device.screen.width / 100;
-  
+  _batteryBar.width = Math.floor(battery) * device.screen.width / 100;
+
   // Battery text
-  let max = batteries.length - 1;
-  for(let i=0; i<max; i++){
-    batteries[i+1].href = util.getImageFromLeft(batteryString,i);  
+  let max = _batteries.length - 1;
+  for (let i = 0; i < max; i++) {
+    _batteries[i + 1].href = util.getImageFromLeft(batteryString, i);
   }
 });
 // --------------------------------------------------------------------------------
@@ -81,57 +83,81 @@ batterySimple.initialize((battery)=>{
 // --------------------------------------------------------------------------------
 import * as simpleSettings from "./simple/device-settings";
 
-simpleSettings.initialize((data:any) => {
-  if (!data) {
+simpleSettings.initialize((settings: any) => {
+  if (!settings) {
     return;
   }
 
-  if (data.colorBackground) {
-    background.style.fill = data.colorBackground;
-    batteryBackground.gradient.colors.c2 = data.colorBackground;
+  if (settings.showBatteryPourcentage !== undefined) {
+    _batteriesContainer.style.display = settings.showBatteryPourcentage === true
+      ? "inline"
+      : "none";
+  }
+
+  if (settings.showBatteryBar !== undefined) {
+    _batteryBarContainer.style.display = settings.showBatteryBar === true
+      ? "inline"
+      : "none";
+  }
+
+  if (settings.colorBackground) {
+    background.style.fill = settings.colorBackground;
+    batteryBackground.gradient.colors.c2 = settings.colorBackground;
     UpdateActivities(); // For achivement color
   }
 
-  if (data.colorForeground) {
-    container.style.fill = data.colorForeground;
+  if (settings.colorForeground) {
+    container.style.fill = settings.colorForeground;
   }
 });
 // --------------------------------------------------------------------------------
 // Activity
 // --------------------------------------------------------------------------------
-import { goals,today } from "user-activity";
+import { goals, today } from "user-activity";
+import { me as appbit } from "appbit";
 
-goals.onreachgoal = (evt)=>{
+// Detect limitations of versa light
+const _elevationIsAvailablle = appbit.permissions.granted("access_activity")
+  && today.local.elevationGain !== undefined;
+
+// Update Style when elevation isnot available
+if(!_elevationIsAvailablle){
+  // Hide the elevation informations
+  stats[1].style.display = "none";
+  stats[2].x = 90;
+  stats[3].x = 170;
+}
+
+// When goals are reached
+goals.onreachgoal = (evt) => {
   UpdateActivities();
 };
 
 // Update Activities informations
-function UpdateActivities():void
-{
-  RenderActivity(stats[0],goals.steps, today.local.steps);
-  RenderActivity(stats[1],goals.elevationGain, today.local.elevationGain);
-  RenderActivity(stats[2],goals.calories, today.local.calories);
-  RenderActivity(stats[3],goals.activeMinutes, today.local.activeMinutes);
-  RenderActivity(stats[4],goals.distance, today.local.distance);  
+function UpdateActivities(): void {
+  RenderActivity(stats[0], goals.steps, today.local.steps);
+  if(_elevationIsAvailablle) RenderActivity(stats[1], goals.elevationGain, today.local.elevationGain);
+  RenderActivity(stats[2], goals.calories, today.local.calories);
+  RenderActivity(stats[3], goals.activeMinutes, today.local.activeMinutes);
+  RenderActivity(stats[4], goals.distance, today.local.distance);
 }
 
 // Render an activity
-function RenderActivity(container:GraphicsElement, goal:number, done:number):void
-{
+function RenderActivity(container: GraphicsElement, goal: number, done: number): void {
   let arc = container.getElementsByTagName("arc")[1] as ArcElement;
   let circle = container.getElementsByTagName("circle")[0] as CircleElement;
   let image = container.getElementsByTagName("image")[0] as ImageElement;
 
   // Goals ok
-  if(done >= goal){
+  if (done >= goal) {
     circle.style.display = "inline";
-    arc.style.display= "none";
+    arc.style.display = "none";
     image.style.fill = background.style.fill;
   }
-  else{
+  else {
     circle.style.display = "none";
-    arc.style.display= "inline";
-    arc.sweepAngle = util.activityToAngle(goal,done);
+    arc.style.display = "inline";
+    arc.sweepAngle = util.activityToAngle(goal, done);
     image.style.fill = container.style.fill;
   }
 }

@@ -4,12 +4,12 @@
   "license": "MIT",
   "repository": {},
   "devDependencies": {
-    "@fitbit/sdk": "~3.0.0",
-    "@fitbit/sdk-cli": "^1.5.0",
-    "fitbit-sdk-types": "^3.0.0"
+    "@fitbit/sdk": "~3.1.0",
+    "@fitbit/sdk-cli": "^1.6.0",
+    "fitbit-sdk-types": "4.0.0"
   },
   "fitbit": {
-    "appUUID": "5f2b58b6-5642-424c-8ad9-bab3ed14c21d",
+    "appUUID": "1cfc2bbd-b3ac-4b4f-bf9d-d5f1f5f0bce0",
     "appType": "clockface",
     "appDisplayName": "MyDyslexicStatsArc",
     "requestedPermissions": [
@@ -17,7 +17,8 @@
     ],
     "buildTargets": [
       "higgs",
-      "meson"
+      "meson",
+      "gemini"
     ],
     "i18n": {},
     "defaultLanguage": "en-US"

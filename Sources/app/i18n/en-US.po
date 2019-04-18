@@ -1,0 +1,35 @@
+msgid "month01"
+msgstr "JAN"
+
+msgid "month02"
+msgstr "FEB"
+
+msgid "month03"
+msgstr "MAR"
+
+msgid "month04"
+msgstr "APR"
+
+msgid "month05"
+msgstr "MAY"
+
+msgid "month06"
+msgstr "JUN"
+
+msgid "month07"
+msgstr "JUL"
+
+msgid "month08"
+msgstr "AUG"
+
+msgid "month09"
+msgstr "SEP"
+
+msgid "month10"
+msgstr "OCT"
+
+msgid "month11"
+msgstr "NOV"
+
+msgid "month12"
+msgstr "DEC"

@@ -36,7 +36,7 @@ function getImage(str:string) : string{
   return `images/${str}.png`;
 }
 
-export function activityToAngle(activityGoal:number, activityToday:number):number
+export function activityToAngle(activityGoal:number, activityToday:number) : number
 {
   if(activityGoal<=0) {
     return 0;

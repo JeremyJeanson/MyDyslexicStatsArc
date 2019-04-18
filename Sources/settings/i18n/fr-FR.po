@@ -1,0 +1,11 @@
+msgid "backgroundColor"
+msgstr "Couleur de fond"
+
+msgid "textColor"
+msgstr "Couleur du texte"
+
+msgid "showBatteryBar"
+msgstr "Afficher le % de batterie"
+
+msgid "showBatteryPourcentage"
+msgstr "Afficher le texte du % de batterie"

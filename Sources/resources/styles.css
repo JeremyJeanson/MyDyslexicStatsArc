@@ -28,7 +28,7 @@
   x: 2;
   href:"images/battery.png";
 }
-.battery-bar-container{
+#battery-bar-container{
   x: 0;
   y: 0;
 }

@@ -1,6 +1,6 @@
 <svg id="container">
   <rect id="background" /> 
-  <svg class="battery-bar-container">
+  <svg id="battery-bar-container">
     <gradientRect id="battery-bar-background"
       gradient-type="linear"
       gradient-x1="0" gradient-y1="100%-10"
