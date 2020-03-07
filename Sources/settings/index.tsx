@@ -57,6 +57,9 @@ registerSettingsPage(({ settings, settingsStorage }) => {
       <Section
         title="Options">
         <Toggle
+          settingsKey="clockDisplay24"
+          label={gettext("clockDisplay24")} />          
+        <Toggle
           settingsKey="showBatteryPourcentage"
           label={gettext("showBatteryPourcentage")} />
         <Toggle

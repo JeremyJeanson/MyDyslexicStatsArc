@@ -33,3 +33,24 @@ msgstr "nov"
 
 msgid "month12"
 msgstr "déc"
+
+msgid "day0"
+msgstr "dimanche"
+
+msgid "day1"
+msgstr "lun"
+
+msgid "day2"
+msgstr "mar"
+
+msgid "day3"
+msgstr "mer"
+
+msgid "day4"
+msgstr "jeu"
+
+msgid "day5"
+msgstr "ven"
+
+msgid "day6"
+msgstr "sam"

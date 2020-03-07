@@ -1,3 +1,6 @@
+msgid "clockDisplay24"
+msgstr "Afficher l'heure au format 24H"
+
 msgid "backgroundColor"
 msgstr "Couleur de fond"
 

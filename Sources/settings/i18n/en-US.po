@@ -1,3 +1,6 @@
+msgid "clockDisplay24"
+msgstr "Use the 24 Hours clock format"
+
 msgid "backgroundColor"
 msgstr "Background Color"
 

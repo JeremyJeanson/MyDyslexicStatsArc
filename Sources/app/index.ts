@@ -13,8 +13,10 @@ const background = document.getElementById("background") as RectElement;
 const batteryBackground = document.getElementById("battery-bar-background") as GradientArcElement;
 
 // Date
-const dateContainer = document.getElementById("date-container") as GraphicsElement;
-const dates = dateContainer.getElementsByTagName("image") as ImageElement[];
+const dates1Container = document.getElementById("date1-container") as GraphicsElement;
+const dates1 = dates1Container.getElementsByTagName("image") as ImageElement[];
+const dates2Container = document.getElementById("date2-container") as GraphicsElement;
+const dates2 = dates2Container.getElementsByTagName("image") as ImageElement[];
 
 // Hours
 const cloks = document.getElementById("clock-container").getElementsByTagName("image") as ImageElement[];
@@ -31,30 +33,35 @@ const stats = document.getElementsByClassName("stats-container")[0].getElementsB
 // Clock
 // --------------------------------------------------------------------------------
 // Update the clock every seconds
-simpleMinutes.initialize("seconds", (hours, mins, date) => {
-  // hours="20";
-  // mins="38";
-  // date = "17 jan";
+simpleMinutes.initialize("seconds", (clock) => {
+  // clock.Hours = "21";
+  // clock.Minutes ="38";
   // Hours
-  if (hours) {
-    cloks[0].href = util.getImageFromLeft(hours, 0);
-    cloks[1].href = util.getImageFromLeft(hours, 1);
+  if (clock.Hours !== undefined) {
+    cloks[0].href = util.getImageFromLeft(clock.Hours, 0);
+    cloks[1].href = util.getImageFromLeft(clock.Hours, 1);
   }
 
   // Minutes
-  if (mins) {
-    cloks[3].href = util.getImageFromLeft(mins, 0);
-    cloks[4].href = util.getImageFromLeft(mins, 1);
+  if (clock.Minutes !== undefined) {
+    cloks[3].href = util.getImageFromLeft(clock.Minutes, 0);
+    cloks[4].href = util.getImageFromLeft(clock.Minutes, 1);
   }
 
-  // Date
-  if (date) {
+  // Date 1
+  if (clock.Date1 !== undefined) {
     // Position
-    dateContainer.x = (device.screen.width) - (date.length * 20);
+    dates1Container.x = (device.screen.width) - (clock.Date1.length * 20);
     // Values
-    for (let i = 0; i < dates.length; i++) {
-      dates[i].href = util.getImageFromLeft(date, i);
-    }
+    util.display(clock.Date1, dates1);
+  }
+
+  // Date 2
+  if (clock.Date2 !== undefined) {
+    // Position
+    dates2Container.x = (device.screen.width) - (clock.Date2.length * 20);
+    // Values
+    util.display(clock.Date2, dates2);
   }
 
   // update all stats
@@ -109,6 +116,11 @@ simpleSettings.initialize((settings: any) => {
   if (settings.colorForeground) {
     container.style.fill = settings.colorForeground;
   }
+
+  // Display based on 12H or 24H format
+  if (settings.clockDisplay24 !== undefined) {
+    simpleMinutes.updateClockDisplay24(settings.clockDisplay24 as boolean);
+  }
 });
 // --------------------------------------------------------------------------------
 // Activity
@@ -121,7 +133,7 @@ const _elevationIsAvailablle = appbit.permissions.granted("access_activity")
   && today.local.elevationGain !== undefined;
 
 // Update Style when elevation isnot available
-if(!_elevationIsAvailablle){
+if (!_elevationIsAvailablle) {
   // Hide the elevation informations
   stats[1].style.display = "none";
   stats[2].x = 90;
@@ -136,7 +148,7 @@ goals.onreachgoal = (evt) => {
 // Update Activities informations
 function UpdateActivities(): void {
   RenderActivity(stats[0], goals.steps, today.local.steps);
-  if(_elevationIsAvailablle) RenderActivity(stats[1], goals.elevationGain, today.local.elevationGain);
+  if (_elevationIsAvailablle) RenderActivity(stats[1], goals.elevationGain, today.local.elevationGain);
   RenderActivity(stats[2], goals.calories, today.local.calories);
   RenderActivity(stats[3], goals.activeMinutes, today.local.activeMinutes);
   RenderActivity(stats[4], goals.distance, today.local.distance);

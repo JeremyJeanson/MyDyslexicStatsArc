@@ -8,6 +8,7 @@
 }
 #date-container {
   y: 2;
+  height: 40;
 }
 #date-container image{
   x:$;
@@ -84,25 +85,25 @@
   width: 60%;
 }  
 .stats-steps-container{ 
-  fill:lightblue;
+  fill:#FF0000;
 }
 .stats-steps-container image{ 
   href:"images/stat_steps_solid_48px.png";
 }
 .stats-floors-container{
-  fill:green;
+  fill:#FF0080;
 }
 .stats-floors-container image{ 
   href:"images/stat_floors_solid_48px.png";
 }
 .stats-cals-container{
-  fill:orange;
+  fill:#FF8000;
 }
 .stats-cals-container image{ 
   href:"images/stat_cals_solid_48px.png";
 }
 .stats-am-container{
-  fill:yellow;
+  fill:green;
 }
 .stats-am-container image{ 
   href:"images/stat_am_solid_48px.png";

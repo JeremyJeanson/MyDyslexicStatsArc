@@ -19,18 +19,50 @@
     <image/>
     <image/>
   </svg>
-  <svg id="date-container">
-    <image/>
-    <image/>
-    <image/>
-    <image/>
-    <image/>
-    <image/>
-    <image/>
-    <image/>
-    <image/>
-    <image/>
-  </svg>
+  <use id="date-container" href="#cycleview">
+    <use href="#cycleview-item">
+      <svg id="date1-container">
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+      </svg>  
+    </use>
+    <use href="#cycleview-item">
+      <svg id="date2-container">
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+        <image />
+      </svg>  
+    </use>
+  </use>
   <svg id="battery-container">
     <image class="battery-image" />
     <image x="28"/>
