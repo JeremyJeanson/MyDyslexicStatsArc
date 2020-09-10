@@ -77,12 +77,6 @@
       <arc/>
       <image />
     </svg>
-    <svg class="stats-floors-container">
-      <arc class="arc-background"/>
-      <circle />
-      <arc/>
-      <image/>
-    </svg>
     <svg class="stats-cals-container">
       <arc class="arc-background"/>
       <circle />
@@ -101,5 +95,11 @@
       <arc/>
       <image/>
     </svg>
+    <svg class="stats-floors-container">
+      <arc class="arc-background"/>
+      <circle />
+      <arc/>
+      <image/>
+    </svg>    
   </svg>
 </svg>

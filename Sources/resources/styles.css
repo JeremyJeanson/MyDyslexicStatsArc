@@ -42,15 +42,18 @@
   width: 100%;
 }
 #clock-container {
-  x: 50%-152;
+  x: 50%-150;
+  y: 50%-65;
+  height: 100;
+  width: 300;
 }
 #clock-container image {
   x:$;
-  height: 100;
-  width: 70;
+  height: 100%;
+  width: 23%;
 }  
 #clock-container .clock-doublepoints{
-  width:25;
+  width:8%;
   href:"images/doublepoints.png";
 }
 .stats-container{

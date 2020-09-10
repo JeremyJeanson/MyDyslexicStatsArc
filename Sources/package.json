@@ -5,15 +5,19 @@
   "repository": {},
   "devDependencies": {
     "@fitbit/sdk": "4.1.0",
-    "@fitbit/sdk-cli": "1.7.1",
-    "fitbit-sdk-types": "4.3.5"
+    "@fitbit/sdk-cli": "1.7.3",
+    "fitbit-sdk-types": "4.3.9",
+    "tslib": "2.0.1",
+    "simple-fitbit-settings": "2.0.1",
+    "simple-fitbit-activities": "0.0.1"
   },
   "fitbit": {
     "appUUID": "1cfc2bbd-b3ac-4b4f-bf9d-d5f1f5f0bce0",
     "appType": "clockface",
     "appDisplayName": "MyDyslexicStatsArc",
     "requestedPermissions": [
-      "access_activity"
+      "access_activity",
+      "access_aod"
     ],
     "buildTargets": [
       "higgs",

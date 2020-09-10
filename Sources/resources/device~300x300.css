@@ -1,22 +1,16 @@
-#clock-container {
-  y: 60;
+.stats-container{
+  x:-5;
 }
 .stats-container svg{
+  x:$+10;
   height: 50;
   width: 50;
 }
-.stats-steps-container{
+.stats-container.no-elevation{
   x:5;
 }
-.stats-floors-container{
-  x:65;
-}
-.stats-cals-container{
-  x:50%-25;
-}
-.stats-am-container{
-  x:185;
-}
-.stats-dist-container{
-  x:245;
+.stats-container.no-elevation svg{
+  x:$+10;
+  height: 60;
+  width: 60;
 }
