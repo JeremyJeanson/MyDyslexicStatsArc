@@ -1,7 +1,7 @@
 .stats-container{
   x:-5;
 }
-.stats-container svg{
+.stat{
   x:$+10;
   height: 50;
   width: 50;
@@ -9,7 +9,7 @@
 .stats-container.no-elevation{
   x:5;
 }
-.stats-container.no-elevation svg{
+.stats-container.no-elevation .stat{
   x:$+10;
   height: 60;
   width: 60;

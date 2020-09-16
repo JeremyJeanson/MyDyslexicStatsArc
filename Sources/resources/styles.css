@@ -15,19 +15,22 @@
   width: 20;
   height: 40;
 }
+/* Battery *************************************************************/
 #battery-container{
   height: 30;
-  width: 100;
   y:10;  
 }
-#battery-container image{
-  x:$;
+#battery-symbol{
   width: 24;
   height: 24;
 }
-#battery-container .battery-image{
-  x: 2;
-  href:"images/battery.png";
+#battery-text{
+  x:30;
+}
+#battery-text image{
+  x:$;
+  width: 24;
+  height: 24;
 }
 #battery-bar-container{
   x: 0;
@@ -54,66 +57,9 @@
 }  
 #clock-container .clock-doublepoints{
   width:8%;
-  href:"images/doublepoints.png";
+  href:"chars/58.png";
 }
 .stats-container{
   x:0;
   y:75%;
-}
-.stats-container arc{
-  y:0;
-  height: 100%;
-  width: 100%;
-  arc-width:4;
-  start-angle:0;
-}
-.stats-container .arc-background{
-  x:2;
-  y:2;
-  height: 100%-4;
-  width: 100%-4;
-  arc-width:1;
-  sweepAngle:360;
-}
-.stats-container circle{
-  cx:50%;
-  cy:50%;
-  r:50%;  
-  fill: gold;
-}
-.stats-container image{
-  x:20%;
-  y:20%;
-  height: 60%;
-  width: 60%;
-}  
-.stats-steps-container{ 
-  fill:#FF0000;
-}
-.stats-steps-container image{ 
-  href:"images/stat_steps_solid_48px.png";
-}
-.stats-floors-container{
-  fill:#FF0080;
-}
-.stats-floors-container image{ 
-  href:"images/stat_floors_solid_48px.png";
-}
-.stats-cals-container{
-  fill:#FF8000;
-}
-.stats-cals-container image{ 
-  href:"images/stat_cals_solid_48px.png";
-}
-.stats-am-container{
-  fill:green;
-}
-.stats-am-container image{ 
-  href:"images/stat_am_solid_48px.png";
-}
-.stats-dist-container{
-  fill:blue;
-}
-.stats-dist-container image{ 
-  href:"images/stat_dist_solid_48px.png";
 }

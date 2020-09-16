@@ -4,12 +4,12 @@
   "license": "MIT",
   "repository": {},
   "devDependencies": {
-    "@fitbit/sdk": "4.1.0",
+    "@fitbit/sdk": "4.2.1",
     "@fitbit/sdk-cli": "1.7.3",
-    "fitbit-sdk-types": "4.3.9",
+    "fitbit-sdk-types": "5.0.0",
     "tslib": "2.0.1",
-    "simple-fitbit-settings": "2.0.1",
-    "simple-fitbit-activities": "0.0.1"
+    "simple-fitbit-settings": "2.0.2",
+    "simple-fitbit-activities": "1.0.1"
   },
   "fitbit": {
     "appUUID": "1cfc2bbd-b3ac-4b4f-bf9d-d5f1f5f0bce0",

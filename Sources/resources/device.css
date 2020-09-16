@@ -4,7 +4,7 @@
 .stats-container{
   x:-4;
 }
-.stats-container svg{
+.stat{
   x:$+8;
   height: 60;
   width: 60;
