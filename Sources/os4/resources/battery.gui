@@ -1,0 +1,15 @@
+<svg>
+    <defs>
+        <symbol id="battery">
+        <g transform="translate(50%,50%)">
+            <image id="battery-icon" x="-50%" y="-50%" />
+            <animateTransform attributeName="transform" attributeType="scale"
+            begin="highlight" from="1" to="0.5"
+            final="keep" dur="0.5"/>
+            <animateTransform attributeName="transform" attributeType="scale"
+            begin="highlight+0.5" from="0.5" to="1.5"
+            final="keep" dur="0.5" final="restore"/>
+        </g>
+        </symbol>    
+    </defs>
+</svg>

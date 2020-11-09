@@ -1,0 +1,24 @@
+/* stats colors */
+.steps{
+    href:"images/steps_36px.png";
+    fill:#FF0000;
+}
+.calories{
+    href:"images/calories_36px.png";
+    fill:#FF8000;
+}
+.activesminutes{
+    href:"images/azm_36px.png";
+    fill:green;
+}
+.distance{
+    href:"images/distance_36px.png";
+    fill:blue;
+}
+.elevation{
+    href:"images/floors_36px.png";
+    fill:#FF0080;
+}
+.goalreached{
+    fill: gold;
+}

@@ -1,0 +1,65 @@
+#container{
+  fill: white;
+}
+#background {
+  width: 100%;
+  height: 100%;
+  fill: black;
+}
+#date-container {
+  y: 2;
+  height: 40;
+}
+#date-container image{
+  x:$;
+  width: 20;
+  height: 40;
+}
+/* Battery *************************************************************/
+#battery-container{
+  height: 30;
+  y:10;  
+}
+#battery-symbol{
+  width: 24;
+  height: 24;
+}
+#battery-text{
+  x:30;
+}
+#battery-text image{
+  x:$;
+  width: 24;
+  height: 24;
+}
+#battery-bar-container{
+  x: 0;
+  y: 0;
+}
+#battery-bar-background{
+  height: 100%;
+  width: 100%;
+}
+#battery-bar-value{
+  height: 100%;
+  width: 100%;
+}
+#clock-container {
+  x: 50%-150;
+  y: 50%-65;
+  height: 100;
+  width: 300;
+}
+#clock-container image {
+  x:$;
+  height: 100%;
+  width: 23%;
+}  
+#clock-container .clock-doublepoints{
+  width:8%;
+  href:"chars/58.png";
+}
+.stats-container{
+  x:0;
+  y:75%;
+}

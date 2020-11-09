@@ -1,0 +1,22 @@
+#battery-bar-container{
+  height: 10;
+  width:100%-120;
+  y:0;
+  x:60;
+}
+
+#battery-container{
+  x:26;
+  y:36;
+}
+#date-container{
+  y:26;
+}
+.stats-container{
+  x:100%-320;
+}
+.stat{
+  x:$+10;
+  height: 50;
+  width: 50;
+}

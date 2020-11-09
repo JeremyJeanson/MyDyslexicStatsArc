@@ -1,0 +1,23 @@
+msgid "clockFormat"
+msgstr "Définir le format horaire"
+
+msgid "clockFormatUser"
+msgstr "Profil Fitbit"
+
+msgid "clockFormat12h"
+msgstr "12 Heures"
+
+msgid "clockFormat24h"
+msgstr "24 Heures"
+
+msgid "backgroundColor"
+msgstr "Couleur de fond"
+
+msgid "textColor"
+msgstr "Couleur du texte"
+
+msgid "showBatteryBar"
+msgstr "Afficher le % de batterie"
+
+msgid "showBatteryPourcentage"
+msgstr "Afficher le texte du % de batterie"

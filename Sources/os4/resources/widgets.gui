@@ -1,0 +1,13 @@
+<svg>
+  <defs>
+    <link rel="stylesheet" href="activities.css" />
+    <link rel="stylesheet" href="battery.css" />  
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="device.css" />
+    <link rel="import" href="/mnt/sysassets/widgets_common.gui" />
+    <link rel="import" href="/mnt/sysassets/widgets/baseview_widget.gui" />
+    <link rel="import" href="/mnt/sysassets/widgets/cycleview_widget.gui" />
+    <link rel="import" href="activity-symbol.gui"/>
+    <link rel="import" href="battery.gui"/> 
+  </defs>
+</svg>

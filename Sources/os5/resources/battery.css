@@ -1,0 +1,15 @@
+#battery-symbol{
+    x:4;
+    width: 24;
+    height: 24;  
+}
+#battery-icon{
+    href:"images/battery.png";
+}
+#battery-icon.middle{
+    href:"images/battery-middle.png";
+}
+#battery-icon.low{
+    fill:orange;
+    href:"images/battery-low.png";
+}

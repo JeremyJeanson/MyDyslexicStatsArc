@@ -1,0 +1,18 @@
+  <defs>
+    <symbol id="activity-symbol"> 
+      <g transform="translate(50%,50%)">
+        <section x="-50%" y="-50%" >
+          <arc x="2" y="2" height="100%-4" width="100%-4" arc-width="1" sweep-angle="360" />
+          <circle id="circle" fill="gold" cx="50%" cy="50%" r="50%"/>
+          <arc id="arc" height="100%" width="100%" arc-width="4"/>
+          <image id="image" x="20%" y="20%" height="60%" width="60%" />
+        </section>
+        <animateTransform attributeName="transform" attributeType="scale"
+          begin="highlight" end="unload;unhighlight" from="1" to="1.5" dur="0.3"
+          final="keep" />
+        <animateTransform attributeName="transform" attributeType="scale"
+          begin="highlight+0.3" end="unload;unhighlight" from="1.5" to="1" dur="0.1"
+          final="keep" />
+      </g>
+    </symbol>  
+      </defs>
